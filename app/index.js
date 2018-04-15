@@ -28,11 +28,11 @@ app.get('/public-key', (req, res) => {
 })
 
 app.get('/balance', (req, res) => {
-  res.json({ balance: wallet.balance });
+  res.json({ balance: wallet.calculateBalance(bc) });
 })
 
 app.get('/users', (req, res) => {
-  res.json({ users: wallet.calculateBalance(bc) });
+  res.json({ users: ['todo'] });
 })
 
 app.get('/transactions', (req, res) => {
