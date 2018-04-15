@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const Blockchain = require('../blockchain');
 const P2PServer = require('./p2pserver.js');
 const Wallet = require('../wallet');
@@ -15,6 +16,7 @@ const tp = new TransactionPool();
 const p2pServer = new P2PServer(bc, tp);
 const miner = new Miner(bc, tp, wallet, p2pServer);
 
+app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/blocks', (req, res) => {
