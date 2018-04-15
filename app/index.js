@@ -27,6 +27,10 @@ app.get('/public-key', (req, res) => {
   res.json({ publicKey: wallet.publicKey });
 })
 
+app.get('/balance', (req, res) => {
+  res.json({ balance: wallet.balance });
+})
+
 app.get('/transactions', (req, res) => {
   res.json(tp.transactions);
 });
