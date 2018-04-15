@@ -31,6 +31,10 @@ app.get('/balance', (req, res) => {
   res.json({ balance: wallet.balance });
 })
 
+app.get('/users', (req, res) => {
+  res.json({ users: wallet.calculateBalance(bc) });
+})
+
 app.get('/transactions', (req, res) => {
   res.json(tp.transactions);
 });
